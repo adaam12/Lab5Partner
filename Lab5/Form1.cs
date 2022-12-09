@@ -22,7 +22,7 @@ namespace Lab5
         private int GetRandom(int min, int max)
         {
 
-            Random rand = new Random()
+            Random rand = new Random();
             int num = rand.Next(min, max);
 
             return num;
@@ -38,9 +38,9 @@ namespace Lab5
 
             int authcode = GetRandom(100000, 200000);
             lblCode.Text = authcode.ToString();
-        
-        
-        
+
+
+        }
         int attempts = 0;
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -54,7 +54,7 @@ namespace Lab5
             {
                 attempts++;
                 MessageBox.Show(attempts.ToString()+" incorrect code(s) entered\nTry again - only 3 attempts allowed", PROGRAMMER);
-                if (attempts != 3 )
+                if (attempts == 3 )
                 {
                     MessageBox.Show(attempts.ToString() + " attempts to login\nAccount locked - Closing program", PROGRAMMER);
                     Close();
